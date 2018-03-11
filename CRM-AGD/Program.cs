@@ -24,7 +24,7 @@ namespace CRM_AGD
             var services = scope.ServiceProvider;
             try
             {
-              var context = services.GetRequiredService<CrmContext>();
+              var context = services.GetRequiredService<AddressContext>();
               context.Database.EnsureCreated();
             }
             catch (Exception ex)

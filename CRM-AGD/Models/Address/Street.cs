@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CRM_AGD.Models
+namespace CRM_AGD.Models.Address
 {
   public class Street
   {

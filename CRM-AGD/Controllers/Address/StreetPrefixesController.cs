@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CRM_AGD.Data;
-using CRM_AGD.Models;
+using CRM_AGD.Models.Address;
 
-namespace CRM_AGD.Controllers
+namespace CRM_AGD.Controllers.Address
 {
     public class StreetPrefixesController : Controller
     {
-        private readonly CrmContext _context;
+        private readonly AddressContext _context;
 
-        public StreetPrefixesController(CrmContext context)
+        public StreetPrefixesController(AddressContext context)
         {
             _context = context;
         }

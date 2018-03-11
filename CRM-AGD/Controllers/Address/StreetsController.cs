@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CRM_AGD.Data;
-using CRM_AGD.Models;
+using CRM_AGD.Models.Address;
 
-namespace CRM_AGD.Controllers
+namespace CRM_AGD.Controllers.Address
 {
     public class StreetsController : Controller
     {
-        private readonly CrmContext _context;
+        private readonly AddressContext _context;
 
-        public StreetsController(CrmContext context)
+        public StreetsController(AddressContext context)
         {
             _context = context;
         }
@@ -22,8 +22,8 @@ namespace CRM_AGD.Controllers
         // GET: Streets
         public async Task<IActionResult> Index()
         {
-            var crmContext = _context.Streets.Include(s => s.city).Include(s => s.streetPrefix);
-            return View(await crmContext.ToListAsync());
+            var addressContext = _context.Streets.Include(s => s.city).Include(s => s.streetPrefix);
+            return View(await addressContext.ToListAsync());
         }
 
         // GET: Streets/Details/5
@@ -49,8 +49,8 @@ namespace CRM_AGD.Controllers
         // GET: Streets/Create
         public IActionResult Create()
         {
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "Name");
-            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "Prefix");
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId");
+            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "StreetPrefixId");
             return View();
         }
 
@@ -85,8 +85,8 @@ namespace CRM_AGD.Controllers
             {
                 return NotFound();
             }
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "Name", street.CityId);
-            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "Prefix", street.StreetPrefixId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId", street.CityId);
+            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "StreetPrefixId", street.StreetPrefixId);
             return View(street);
         }
 

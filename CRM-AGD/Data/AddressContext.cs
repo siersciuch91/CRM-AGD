@@ -1,4 +1,5 @@
 ﻿using CRM_AGD.Models;
+using CRM_AGD.Models.Address;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CRM_AGD.Data
 {
-  public class CrmContext : DbContext
+  public class AddressContext : DbContext
   {
-    public CrmContext(DbContextOptions<CrmContext> options) : base(options)
+    public AddressContext(DbContextOptions<AddressContext> options) : base(options)
     {
     }
 
