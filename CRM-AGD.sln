@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM-AGD", "CRM-AGD\CRM-AGD.csproj", "{084D8D3C-A6BC-4414-BD2F-76C429EFD300}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM_AGD", "CRM-AGD\CRM_AGD.csproj", "{084D8D3C-A6BC-4414-BD2F-76C429EFD300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
