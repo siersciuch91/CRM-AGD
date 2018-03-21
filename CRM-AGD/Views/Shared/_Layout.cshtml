@@ -33,11 +33,13 @@
                 <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                <li><a asp-area="" asp-controller="Cities" asp-action="Index">Cites</a></li>
-                <li><a asp-area="" asp-controller="Streets" asp-action="Index">Streets</a></li>
-                <li><a asp-area="" asp-controller="StreetPrefixes" asp-action="Index">Street Prefixes</a></li>
+                <li><a asp-area="Address" asp-controller="Cities" asp-action="Index">Cites</a></li>
+                <li><a asp-area="Address" asp-controller="Streets" asp-action="Index">Streets</a></li>
+                <li><a asp-area="Address" asp-controller="StreetPrefixes" asp-action="Index">Street Prefixes</a></li>
+                <li><a asp-area="Equipment" asp-controller="Manufacturers" asp-action="Index">Manufacturer</a></li>
               </ul>
                 @await Html.PartialAsync("_LoginPartial")
+                @await Html.PartialAsync("_secondNavBar")
             </div>
         </div>
     </nav>
