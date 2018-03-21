@@ -50,8 +50,8 @@ namespace CRM_AGD.Areas.Address.Controllers
         // GET: Address/Streets/Create
         public IActionResult Create()
         {
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId");
-            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "StreetPrefixId");
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "Name");
+            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "Prefix");
             return View();
         }
 
@@ -68,8 +68,8 @@ namespace CRM_AGD.Areas.Address.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId", street.CityId);
-            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "StreetPrefixId", street.StreetPrefixId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "Name", street.CityId);
+            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "Prefix", street.StreetPrefixId);
             return View(street);
         }
 
@@ -86,8 +86,8 @@ namespace CRM_AGD.Areas.Address.Controllers
             {
                 return NotFound();
             }
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId", street.CityId);
-            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "StreetPrefixId", street.StreetPrefixId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "Name", street.CityId);
+            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "Prefix", street.StreetPrefixId);
             return View(street);
         }
 
@@ -123,8 +123,8 @@ namespace CRM_AGD.Areas.Address.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "CityId", street.CityId);
-            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "StreetPrefixId", street.StreetPrefixId);
+            ViewData["CityId"] = new SelectList(_context.Cities, "CityId", "Name", street.CityId);
+            ViewData["StreetPrefixId"] = new SelectList(_context.StreetPrefixes, "StreetPrefixId", "Prefix", street.StreetPrefixId);
             return View(street);
         }
 

@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel;
 
 namespace CRM_AGD.Areas.Address.Models
 {
@@ -10,7 +9,10 @@ namespace CRM_AGD.Areas.Address.Models
     public int CityId { get; set; }
     public int StreetPrefixId { get; set; }
 
+    [DisplayName("Prefix")]
     public StreetPrefix streetPrefix { get; set; }
+
+    [DisplayName("City")]
     public City city { get; set; }
   }
 }

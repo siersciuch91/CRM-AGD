@@ -73,7 +73,6 @@ namespace CRM_AGD
       {
         routes.MapRoute(name: "areaRoute",  template: "{area:exists}/{controller}/{action}/{id?}"); 
 
-
         routes.MapRoute(
                   name: "default",
                   template: "{controller=Home}/{action=Index}/{id?}");

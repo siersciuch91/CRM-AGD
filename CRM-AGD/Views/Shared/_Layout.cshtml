@@ -18,30 +18,29 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CRM_AGD</a>
-            </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                <li><a asp-area="Address" asp-controller="Cities" asp-action="Index">Cites</a></li>
-                <li><a asp-area="Address" asp-controller="Streets" asp-action="Index">Streets</a></li>
-                <li><a asp-area="Address" asp-controller="StreetPrefixes" asp-action="Index">Street Prefixes</a></li>
-                <li><a asp-area="Equipment" asp-controller="Manufacturers" asp-action="Index">Manufacturer</a></li>
-              </ul>
-                @await Html.PartialAsync("_LoginPartial")
-                @await Html.PartialAsync("_secondNavBar")
-            </div>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CRM_AGD</a>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Contact">@CRM_AGD.Resources.Home.Contact</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Address">Address</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Equipment">Equipment</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Client">Client</a></li>
+          </ul>
+          @await Html.PartialAsync("_LoginPartial")
+        </div>
+        @await Html.PartialAsync("_ModuleNavBar")
+      </div>
     </nav>
     <div class="container body-content">
         @RenderBody()

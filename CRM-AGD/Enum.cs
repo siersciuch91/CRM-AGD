@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace CRM_AGD
 {
-  public class StaticValues
+  public class Enum
   {
-    public static Enum.Module CheckModule = 0;
-    public Enum.Module getCheckModule()
+    public enum Module
     {
-      return CheckModule;
+      Address = 1,
+      Equipment = 2,
+      Client = 3
     }
   }
 }
