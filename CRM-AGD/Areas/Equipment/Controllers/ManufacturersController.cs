@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CRM_AGD.Areas.Equipment.Data;
 using CRM_AGD.Areas.Equipment.Models;
+using CRM_AGD.Data;
 
 namespace CRM_AGD.Areas.Equipment.Controllers
 {
-    [Area("Equipment")]
+  [Area("Equipment")]
     public class ManufacturersController : Controller
     {
-        private readonly EquipmentContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ManufacturersController(EquipmentContext context)
+        public ManufacturersController(ApplicationDbContext context)
         {
             _context = context;
         }

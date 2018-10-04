@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -11,9 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using CRM_AGD.Data;
 using CRM_AGD.Models;
 using CRM_AGD.Services;
-using CRM_AGD.Areas.Equipment.Data;
-using CRM_AGD.Areas.Address.Data;
-using CRM_AGD.Areas.Client.Data;
 
 namespace CRM_AGD
 {
@@ -29,14 +22,14 @@ namespace CRM_AGD
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDbContext<AddressContext>(options =>
-          options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      //services.AddDbContext<AddressContext>(options =>
+      //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-      services.AddDbContext<EquipmentContext>(options =>
-          options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      //services.AddDbContext<EquipmentContext>(options =>
+      //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-      services.AddDbContext<ClientContext>(options =>
-          options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      //services.AddDbContext<ClientContext>(options =>
+      //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
       services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -71,7 +64,12 @@ namespace CRM_AGD
 
       app.UseMvc(routes =>
       {
-        routes.MapRoute(name: "areaRoute",  template: "{area:exists}/{controller}/{action}/{id?}"); 
+        routes.MapRoute(name: "areaRoute",  template: "{area:exists}/{controller}/{action}/{id?}");
+
+        routes.MapRoute(name: "areaRoute2", template: "{area:exists}/{controller}/{action}/{option?}/{search?}");
+        routes.MapRoute(name: "areaRoute3", template: "{area:exists}/{controller}/{action}/{option?}/{search?}/{submit?}");
+
+
 
         routes.MapRoute(
                   name: "default",

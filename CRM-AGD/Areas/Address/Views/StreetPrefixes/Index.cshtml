@@ -1,36 +1,61 @@
-﻿@model IEnumerable<CRM_AGD.Areas.Address.Models.StreetPrefix>
+﻿@using NonFactors.Mvc.Grid;
+
+@model IEnumerable<CRM_AGD.Areas.Address.Models.StreetPrefix>
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+  ViewData["Title"] = "Index";
+  Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+  <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Prefix)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prefix)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.StreetPrefixId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.StreetPrefixId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.StreetPrefixId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+  <thead>
+    <tr>
+      <th>
+        @Html.DisplayNameFor(model => model.Prefix)
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var item in Model)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.Prefix)
+        </td>
+        <td>
+          <a asp-action="Edit" asp-route-id="@item.StreetPrefixId">Edit</a> |
+          <a asp-action="Details" asp-route-id="@item.StreetPrefixId">Details</a> |
+          <a asp-action="Delete" asp-route-id="@item.StreetPrefixId">Delete</a>
+        </td>
+      </tr>
+    }
+  </tbody>
 </table>
+
+
+@*@(Html
+                    .Grid(Model)
+                    .Build(columns =>
+                    {
+                      columns.Add(model => model.Prefix).Titled("Prefix");
+                      columns.Add(model => model.StreetPrefixId).Titled("Id").Filterable(false);
+                      columns.Add(model => Html.ActionLink("Edit", "Edit", new { id = model.StreetPrefixId }));
+                      columns.Add(model => Html.ActionLink("Details", "Details", new { id = model.StreetPrefixId }));
+                      columns.Add(model => Html.ActionLink("Delete", "Delete", new { id = model.StreetPrefixId })).Css("fixed-width");
+                    }).WithFilterMode(GridFilterMode.FilterRow).Empty("No data found").Sortable().MultiFilterable()
+              .Pageable(pager =>
+              {
+                pager.PageSizes = new Dictionary<Int32, String> { { 0, "All" }, { 25, "25" }, { 50, "50" } };
+                pager.ShowPageSizes = true;
+                pager.PagesToDisplay = 5;
+                pager.CurrentPage = 1;
+                pager.RowsPerPage = 2;
+              })
+
+)*@

@@ -1,0 +1,40 @@
+﻿@model CRM_AGD.Areas.Equipment.Models.MachineModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MachineModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.machineType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.machineType.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.manufacturer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.manufacturer.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MachineModelId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -14,5 +14,13 @@ namespace CRM_AGD.Areas.Address.Models
 
     [DisplayName("City")]
     public City city { get; set; }
+
+    public virtual string FullName
+    {
+      get
+      {
+        return string.Format("{0} {1} - {2}",  streetPrefix.Prefix, Name, city.Name).Trim();
+      }
+    }
   }
 }

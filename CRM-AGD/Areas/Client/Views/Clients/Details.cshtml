@@ -1,0 +1,55 @@
+﻿@model CRM_AGD.Areas.Client.Models.Client
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HomeNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.street.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ClientId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

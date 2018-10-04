@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using CRM_AGD.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using CRM_AGD.Areas.Address.Data;
-using CRM_AGD.Areas.Equipment.Data;
-using CRM_AGD.Areas.Client.Data;
 
 namespace CRM_AGD
 {
@@ -27,14 +19,17 @@ namespace CRM_AGD
         var services = scope.ServiceProvider;
         try
         {
-          var contextAddress = services.GetRequiredService<AddressContext>();
-          contextAddress.Database.EnsureCreated();
+          var applicationContext = services.GetRequiredService<ApplicationDbContext>();
+          applicationContext.Database.EnsureCreated();
 
-          var contextEquipment = services.GetRequiredService<EquipmentContext>();
-          contextEquipment.Database.EnsureCreated();
+          //var contextAddress = services.GetRequiredService<AddressContext>();
+          //contextAddress.Database.EnsureCreated();
 
-          var contextClient = services.GetRequiredService<ClientContext>();
-          contextClient.Database.EnsureCreated();
+          //var contextEquipment = services.GetRequiredService<EquipmentContext>();
+          //contextEquipment.Database.EnsureCreated();
+
+          //var contextClient = services.GetRequiredService<ClientContext>();
+          //contextClient.Database.EnsureCreated();
         }
         catch (Exception ex)
         {
