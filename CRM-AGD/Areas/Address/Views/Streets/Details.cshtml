@@ -18,6 +18,12 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.PostCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PostCode)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.city)
         </dt>
         <dd>
@@ -27,7 +33,7 @@
             @Html.DisplayNameFor(model => model.streetPrefix)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.streetPrefix.Prefix)
+            @Html.DisplayFor(model => model.streetPrefix.StreetPrefixId)
         </dd>
     </dl>
 </div>

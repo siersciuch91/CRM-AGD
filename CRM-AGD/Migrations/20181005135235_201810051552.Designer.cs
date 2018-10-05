@@ -11,8 +11,8 @@ using System;
 namespace CRM_AGD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181005134018_201810051540")]
-    partial class _201810051540
+    [Migration("20181005135235_201810051552")]
+    partial class _201810051552
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,6 +45,10 @@ namespace CRM_AGD.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100);
+
+                    b.Property<string>("PostCode")
+                        .IsRequired()
+                        .HasMaxLength(6);
 
                     b.Property<int>("StreetPrefixId");
 

@@ -45,7 +45,7 @@ namespace CRM_AGD.Areas.Client.Models
     public DateTime CreateDate = DateTime.Now;
 
     [DisplayName("Prefered date")]
-    [DataType(DataType.Date)]
+    [DataType(DataType.DateTime)]
     [Required(ErrorMessage = "Field can't be empty")]
     public DateTime SuggestedDate { get; set; } = DateTime.Now.AddDays(1);
 

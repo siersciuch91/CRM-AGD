@@ -14,6 +14,12 @@ namespace CRM_AGD.Areas.Address.Models
     public int CityId { get; set; }
     public int StreetPrefixId { get; set; }
 
+    [DisplayName("Post code")]
+    [StringLength(6, ErrorMessage = "Post code cannot be longer than 6 characters")]
+    [Required(ErrorMessage = "Field can't be empty")]
+    [DataType(DataType.PostalCode, ErrorMessage = "Post code is not valid")]
+    public string PostCode { get; set; }
+
     [DisplayName("Prefix")]
     public StreetPrefix streetPrefix { get; set; }
 

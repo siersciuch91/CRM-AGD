@@ -13,7 +13,7 @@ namespace CRM_AGD.Areas.Client.Models
     public DateTime CreateDate = DateTime.Now;
 
     [DisplayName("Repair term")]
-    [DataType(DataType.Date)]
+    [DataType(DataType.DateTime)]
     [Required(ErrorMessage = "Field can't be empty")]
     public DateTime Term { get; set; }
 

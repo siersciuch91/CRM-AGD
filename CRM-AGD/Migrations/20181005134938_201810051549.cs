@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CRM_AGD.Migrations
 {
-    public partial class _201810051540 : Migration
+    public partial class _201810051549 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -290,6 +290,7 @@ namespace CRM_AGD.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CityId = table.Column<int>(nullable: false),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
+                    PostCode = table.Column<string>(maxLength: 6, nullable: false),
                     StreetPrefixId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
