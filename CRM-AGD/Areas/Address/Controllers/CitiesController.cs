@@ -40,6 +40,13 @@ namespace CRM_AGD.Areas.Address.Controllers
         return NotFound();
       }
 
+      var streets = _context.Streets
+        .Where(s => s.CityId == city.CityId)
+        .Include(s => s.city)
+        .Include(s => s.streetPrefix);
+
+
+      ViewBag.Streets = streets.ToList();
       return View(city);
     }
 

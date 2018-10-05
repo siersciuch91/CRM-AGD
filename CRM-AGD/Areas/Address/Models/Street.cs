@@ -27,5 +27,13 @@ namespace CRM_AGD.Areas.Address.Models
         return string.Format("{0} {1} - {2}",  streetPrefix.Prefix, Name, city.Name).Trim();
       }
     }
+
+    public virtual string FullNameWithOutCityName
+    {
+      get
+      {
+        return string.Format("{0} {1}", streetPrefix.Prefix, Name).Trim();
+      }
+    }
   }
 }
