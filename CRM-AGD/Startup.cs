@@ -22,15 +22,6 @@ namespace CRM_AGD
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      //services.AddDbContext<AddressContext>(options =>
-      //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-      //services.AddDbContext<EquipmentContext>(options =>
-      //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-      //services.AddDbContext<ClientContext>(options =>
-      //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
       services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
