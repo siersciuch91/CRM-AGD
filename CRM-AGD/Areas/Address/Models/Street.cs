@@ -17,7 +17,7 @@ namespace CRM_AGD.Areas.Address.Models
     [DisplayName("Post code")]
     [StringLength(6, ErrorMessage = "Post code cannot be longer than 6 characters")]
     [Required(ErrorMessage = "Field can't be empty")]
-    [DataType(DataType.PostalCode, ErrorMessage = "Post code is not valid")]
+    [RegularExpression("[0-9][0-9]-[0-9][0-9][0-9]", ErrorMessage = "Post code is not valid")]
     public string PostCode { get; set; }
 
     [DisplayName("Prefix")]

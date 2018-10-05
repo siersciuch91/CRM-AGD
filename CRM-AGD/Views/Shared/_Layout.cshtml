@@ -37,14 +37,16 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-          <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-          <li><a asp-area="" asp-controller="Home" asp-action="Contact">@CRM_AGD.Resources.Home.Contact</a></li>
+          <li><a asp-area="" asp-controller="Home" asp-action="CreateIssue">Create issue</a></li>
+          <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
 
           @if (SignInManager.IsSignedIn(User))
           {
             <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Address">Address</a></li>
             <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Equipment">Equipment</a></li>
             <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Client">Client</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Mail">Mail</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="ChangeSubMenu" asp-route-module="@CRM_AGD.Enum.Module.Settlements">Settlements</a></li>
           }
         </ul>
         @await Html.PartialAsync("_LoginPartial")

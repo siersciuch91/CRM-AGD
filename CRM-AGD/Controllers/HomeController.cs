@@ -16,10 +16,10 @@ namespace CRM_AGD.Controllers
       return View();
     }
 
-    public IActionResult About()
+    public IActionResult CreateIssue()
     {
       ChangeSubMenu(Enum.Module.None);
-      ViewData["Message"] = "Your application description page.";
+      ViewData["Message"] = "Create issue.";
 
       return View();
     }
