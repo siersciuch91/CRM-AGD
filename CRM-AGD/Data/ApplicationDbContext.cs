@@ -52,5 +52,9 @@ namespace CRM_AGD.Data
     public DbSet<CRM_AGD.Areas.Settlements.Models.FacturePosition> FacturePosition { get; set; }
 
     public DbSet<CRM_AGD.Areas.Settlements.Models.VatRates> VatRates { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Mail.Models.AttachmentsInbox> AttachmentsInbox { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Mail.Models.AttachmentsSendbox> AttachmentsSendbox { get; set; }
   }
 }
