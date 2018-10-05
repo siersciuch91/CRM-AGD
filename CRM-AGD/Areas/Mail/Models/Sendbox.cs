@@ -28,5 +28,10 @@ namespace CRM_AGD.Areas.Mail.Models
     public string Message { get; set; }
 
     public string MessageHtml { get; set; }
+
+    public int clientId { get; set; }
+
+    [DisplayName("Client")]
+    public CRM_AGD.Areas.Client.Models.Client client { get; set; }
   }
 }

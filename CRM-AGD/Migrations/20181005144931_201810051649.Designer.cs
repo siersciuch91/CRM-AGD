@@ -11,9 +11,10 @@ using System;
 namespace CRM_AGD.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181005144931_201810051649")]
+    partial class _201810051649
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,11 +276,7 @@ namespace CRM_AGD.Migrations
                     b.Property<string>("Tittle")
                         .HasMaxLength(255);
 
-                    b.Property<int>("clientId");
-
                     b.HasKey("InboxId");
-
-                    b.HasIndex("clientId");
 
                     b.ToTable("Inbox");
                 });
@@ -304,11 +301,7 @@ namespace CRM_AGD.Migrations
                     b.Property<string>("Tittle")
                         .HasMaxLength(255);
 
-                    b.Property<int>("clientId");
-
                     b.HasKey("SendboxId");
-
-                    b.HasIndex("clientId");
 
                     b.ToTable("Sendbox");
                 });
@@ -601,22 +594,6 @@ namespace CRM_AGD.Migrations
                     b.HasOne("CRM_AGD.Areas.Mail.Models.Sendbox", "sendbox")
                         .WithMany()
                         .HasForeignKey("SendboxId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("CRM_AGD.Areas.Mail.Models.Inbox", b =>
-                {
-                    b.HasOne("CRM_AGD.Areas.Client.Models.Client", "client")
-                        .WithMany()
-                        .HasForeignKey("clientId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("CRM_AGD.Areas.Mail.Models.Sendbox", b =>
-                {
-                    b.HasOne("CRM_AGD.Areas.Client.Models.Client", "client")
-                        .WithMany()
-                        .HasForeignKey("clientId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

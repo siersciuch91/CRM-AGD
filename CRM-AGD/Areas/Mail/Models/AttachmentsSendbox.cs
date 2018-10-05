@@ -9,5 +9,7 @@ namespace CRM_AGD.Areas.Mail.Models
     public int SendboxId { get; set; }
     [Column(TypeName = "image")]
     public Byte[] AttachmentData { get; set; }
+
+    public Sendbox sendbox { get; set; }
   }
 }
