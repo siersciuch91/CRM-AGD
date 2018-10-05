@@ -46,12 +46,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Mail\Controllers\" />
     <Folder Include="Areas\Mail\Data\" />
-    <Folder Include="Areas\Mail\Views\" />
-    <Folder Include="Areas\Settlements\Controllers\" />
     <Folder Include="Areas\Settlements\Data\" />
-    <Folder Include="Areas\Settlements\Views\" />
   </ItemGroup>
 
 </Project>

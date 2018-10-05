@@ -1,0 +1,46 @@
+﻿@model CRM_AGD.Areas.Client.Models.Issue
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Issue</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Term)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Term)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.client)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.client.EmailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.machineModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.machineModel.Model)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IssueId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

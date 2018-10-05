@@ -14,12 +14,12 @@ namespace CRM_AGD.Areas.Client.Models
     public string FirstName { get; set; }
 
     [DisplayName("Second name")]
-    [StringLength(100, ErrorMessage = "Second name cannot be longer than 50 characters")]
+    [StringLength(100, ErrorMessage = "Second name cannot be longer than 100 characters")]
     [Required(ErrorMessage = "Field can't be empty")]
     public string SecondName { get; set; }
 
     [DisplayName("Email")]
-    [StringLength(100, ErrorMessage = "Email cannot be longer than 50 characters")]
+    [StringLength(100, ErrorMessage = "Email cannot be longer than 100 characters")]
     [Required(ErrorMessage = "Field can't be empty")]
     [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
     public string EmailAddress { get; set; }
@@ -34,7 +34,7 @@ namespace CRM_AGD.Areas.Client.Models
     public int StreetId { get; set; }
 
     [DisplayName("Home no.")]
-    [StringLength(10, ErrorMessage = "Home number cannot be longer than 50 characters")]
+    [StringLength(10, ErrorMessage = "Home number cannot be longer than 10 characters")]
     [Required(ErrorMessage = "Field can't be empty")]
     public string HomeNumber { get; set; }
 

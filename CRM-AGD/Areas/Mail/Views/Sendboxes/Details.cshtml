@@ -1,0 +1,55 @@
+﻿@model CRM_AGD.Areas.Mail.Models.Sendbox
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sendbox</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MailFrom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailFrom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailTo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailTo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tittle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tittle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageHtml)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MessageHtml)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SendboxId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

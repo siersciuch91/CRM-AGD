@@ -1,18 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace CRM_AGD.Areas.Mail.Models
 {
   public class Sendbox
   {
-    public int InboxId { get; set; }
+    public int SendboxId { get; set; }
+
+    [DisplayName("Mail from")]
+    [StringLength(50)]
     public string MailFrom { get; set; }
+
+    [DisplayName("Mail to")]
+    [StringLength(50)]
     public string MailTo { get; set; }
+
+    [DisplayName("Date")]
+    [DataType(DataType.Date)]
     public DateTime Date { get; set; }
+
+    [DisplayName("Tittle")]
+    [StringLength(255)]
     public string Tittle { get; set; }
+
+    [DisplayName("Message")]
     public string Message { get; set; }
+
     public string MessageHtml { get; set; }
   }
 }

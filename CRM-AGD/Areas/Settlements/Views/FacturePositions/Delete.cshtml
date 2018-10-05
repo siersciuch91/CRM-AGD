@@ -1,0 +1,52 @@
+﻿@model CRM_AGD.Areas.Settlements.Models.FacturePosition
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>FacturePosition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Netto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Netto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Brutto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Brutto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.facture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.facture.FactureId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.vatRates)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.vatRates.VatRatesId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FacturePositionId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

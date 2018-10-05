@@ -1,0 +1,43 @@
+﻿@model CRM_AGD.Areas.Settlements.Models.Facture
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Facture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SumNetto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SumNetto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SumBrutto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SumBrutto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.client)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.client.EmailAddress)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.FactureId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

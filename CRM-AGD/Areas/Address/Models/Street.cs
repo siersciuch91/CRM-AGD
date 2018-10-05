@@ -7,7 +7,7 @@ namespace CRM_AGD.Areas.Address.Models
   {
     public int StreetId { get; set; }
 
-    [StringLength(100, ErrorMessage = "Street name cannot be longer than 50 characters")]
+    [StringLength(100, ErrorMessage = "Street name cannot be longer than 100 characters")]
     [Required(ErrorMessage = "Field can't be empty")]
     public string Name { get; set; }
 

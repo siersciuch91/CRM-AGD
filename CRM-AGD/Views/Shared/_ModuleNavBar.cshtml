@@ -24,6 +24,20 @@
   case (CRM_AGD.Enum.Module.Client):
     <ul class="nav navbar-nav">
       <li><a asp-area="Client" asp-controller="Clients" asp-action="Index">Client</a></li>
+      <li><a asp-area="Client" asp-controller="IssueFromPortals" asp-action="Issue from portal">Client</a></li>
+      <li><a asp-area="Client" asp-controller="Issues" asp-action="Index">Issue</a></li>
+    </ul>
+    break;
+  case (CRM_AGD.Enum.Module.Mail):
+    <ul class="nav navbar-nav">
+      <li><a asp-area="Mail" asp-controller="Inboxes" asp-action="Index">Inbox</a></li>
+      <li><a asp-area="Mail" asp-controller="Sendboxes" asp-action="Issue from portal">Sendbox</a></li>
+    </ul>
+    break;
+  case (CRM_AGD.Enum.Module.Settlements):
+    <ul class="nav navbar-nav">
+      <li><a asp-area="Settlements" asp-controller="Factures" asp-action="Index">Facture</a></li>
+      <li><a asp-area="Settlements" asp-controller="VatRates" asp-action="Index">VAT rates</a></li>
     </ul>
     break;
 }

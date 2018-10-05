@@ -1,0 +1,73 @@
+﻿@model CRM_AGD.Areas.Client.Models.IssueFromPortal
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>IssueFromPortal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SecondName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HomeNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SuggestedDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SuggestedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.machineModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.machineModel.Model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.street)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.street.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IssueFromPortalId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

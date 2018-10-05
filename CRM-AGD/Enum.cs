@@ -9,10 +9,12 @@ namespace CRM_AGD
   {
     public enum Module
     {
-      None = 0,
-      Address = 1,
-      Equipment = 2,
-      Client = 3
+      None,
+      Address,
+      Equipment,
+      Client,
+      Mail,
+      Settlements
     }
   }
 }

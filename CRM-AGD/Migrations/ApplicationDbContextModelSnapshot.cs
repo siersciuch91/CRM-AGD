@@ -25,7 +25,9 @@ namespace CRM_AGD.Migrations
                     b.Property<int>("CityId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.HasKey("CityId");
 
@@ -39,7 +41,9 @@ namespace CRM_AGD.Migrations
 
                     b.Property<int>("CityId");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<int>("StreetPrefixId");
 
@@ -57,7 +61,8 @@ namespace CRM_AGD.Migrations
                     b.Property<int>("StreetPrefixId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Prefix");
+                    b.Property<string>("Prefix")
+                        .HasMaxLength(5);
 
                     b.HasKey("StreetPrefixId");
 
@@ -69,20 +74,26 @@ namespace CRM_AGD.Migrations
                     b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("AdditionalInfo");
+
                     b.Property<string>("EmailAddress")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<string>("FirstName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.Property<string>("HomeNumber")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(10);
 
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(9);
 
                     b.Property<string>("SecondName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(100);
 
                     b.Property<int>("StreetId");
 
@@ -91,6 +102,69 @@ namespace CRM_AGD.Migrations
                     b.HasIndex("StreetId");
 
                     b.ToTable("Client");
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Client.Models.Issue", b =>
+                {
+                    b.Property<int>("IssueId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ClientId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("MachineModelId");
+
+                    b.Property<DateTime>("Term");
+
+                    b.HasKey("IssueId");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("MachineModelId");
+
+                    b.ToTable("Issue");
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Client.Models.IssueFromPortal", b =>
+                {
+                    b.Property<int>("IssueFromPortalId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("EmailAddress")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("HomeNumber")
+                        .IsRequired()
+                        .HasMaxLength(10);
+
+                    b.Property<int>("MachineModelId");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasMaxLength(9);
+
+                    b.Property<string>("SecondName")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int>("StreetId");
+
+                    b.Property<DateTime>("SuggestedDate");
+
+                    b.HasKey("IssueFromPortalId");
+
+                    b.HasIndex("MachineModelId");
+
+                    b.HasIndex("StreetId");
+
+                    b.ToTable("IssueFromPortal");
                 });
 
             modelBuilder.Entity("CRM_AGD.Areas.Equipment.Models.MachineModel", b =>
@@ -102,7 +176,9 @@ namespace CRM_AGD.Migrations
 
                     b.Property<int>("ManufacturerId");
 
-                    b.Property<string>("Model");
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasMaxLength(40);
 
                     b.HasKey("MachineModelId");
 
@@ -118,7 +194,9 @@ namespace CRM_AGD.Migrations
                     b.Property<int>("MachineTypeId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.HasKey("MachineTypeId");
 
@@ -130,11 +208,119 @@ namespace CRM_AGD.Migrations
                     b.Property<int>("ManufacturerId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.HasKey("ManufacturerId");
 
                     b.ToTable("Manufacturer");
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Mail.Models.Inbox", b =>
+                {
+                    b.Property<int>("InboxId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("MailFrom")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("MailTo")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Message");
+
+                    b.Property<string>("MessageHtml");
+
+                    b.Property<string>("Tittle")
+                        .HasMaxLength(255);
+
+                    b.HasKey("InboxId");
+
+                    b.ToTable("Inbox");
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Mail.Models.Sendbox", b =>
+                {
+                    b.Property<int>("SendboxId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("MailFrom")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("MailTo")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Message");
+
+                    b.Property<string>("MessageHtml");
+
+                    b.Property<string>("Tittle")
+                        .HasMaxLength(255);
+
+                    b.HasKey("SendboxId");
+
+                    b.ToTable("Sendbox");
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Settlements.Models.Facture", b =>
+                {
+                    b.Property<int>("FactureId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("ClientId");
+
+                    b.Property<DateTime>("CreateDate");
+
+                    b.Property<double>("SumBrutto");
+
+                    b.Property<double>("SumNetto");
+
+                    b.HasKey("FactureId");
+
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("Facture");
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Settlements.Models.FacturePosition", b =>
+                {
+                    b.Property<int>("FacturePositionId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<double>("Brutto");
+
+                    b.Property<string>("Description");
+
+                    b.Property<int>("FactureId");
+
+                    b.Property<double>("Netto");
+
+                    b.Property<int>("VatRatesId");
+
+                    b.HasKey("FacturePositionId");
+
+                    b.HasIndex("FactureId");
+
+                    b.HasIndex("VatRatesId");
+
+                    b.ToTable("FacturePosition");
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Settlements.Models.VatRates", b =>
+                {
+                    b.Property<int>("VatRatesId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Value");
+
+                    b.HasKey("VatRatesId");
+
+                    b.ToTable("VatRates");
                 });
 
             modelBuilder.Entity("CRM_AGD.Models.ApplicationUser", b =>
@@ -317,6 +503,32 @@ namespace CRM_AGD.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("CRM_AGD.Areas.Client.Models.Issue", b =>
+                {
+                    b.HasOne("CRM_AGD.Areas.Client.Models.Client", "client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CRM_AGD.Areas.Equipment.Models.MachineModel", "machineModel")
+                        .WithMany()
+                        .HasForeignKey("MachineModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Client.Models.IssueFromPortal", b =>
+                {
+                    b.HasOne("CRM_AGD.Areas.Equipment.Models.MachineModel", "machineModel")
+                        .WithMany()
+                        .HasForeignKey("MachineModelId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CRM_AGD.Areas.Address.Models.Street", "street")
+                        .WithMany()
+                        .HasForeignKey("StreetId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("CRM_AGD.Areas.Equipment.Models.MachineModel", b =>
                 {
                     b.HasOne("CRM_AGD.Areas.Equipment.Models.MachineType", "machineType")
@@ -327,6 +539,27 @@ namespace CRM_AGD.Migrations
                     b.HasOne("CRM_AGD.Areas.Equipment.Models.Manufacturer", "manufacturer")
                         .WithMany()
                         .HasForeignKey("ManufacturerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Settlements.Models.Facture", b =>
+                {
+                    b.HasOne("CRM_AGD.Areas.Client.Models.Client", "client")
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CRM_AGD.Areas.Settlements.Models.FacturePosition", b =>
+                {
+                    b.HasOne("CRM_AGD.Areas.Settlements.Models.Facture", "facture")
+                        .WithMany()
+                        .HasForeignKey("FactureId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CRM_AGD.Areas.Settlements.Models.VatRates", "vatRates")
+                        .WithMany()
+                        .HasForeignKey("VatRatesId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

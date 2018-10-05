@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CRM_AGD.Areas.Mail.Models.Sendbox>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailFrom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailTo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tittle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Message)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MessageHtml)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MailTo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tittle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageHtml)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SendboxId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SendboxId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SendboxId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

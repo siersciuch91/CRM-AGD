@@ -8,6 +8,8 @@ using CRM_AGD.Models;
 using CRM_AGD.Areas.Address.Models;
 using CRM_AGD.Areas.Client.Models;
 using CRM_AGD.Areas.Equipment.Models;
+using CRM_AGD.Areas.Mail.Models;
+using CRM_AGD.Areas.Settlements.Models;
 
 namespace CRM_AGD.Data
 {
@@ -36,5 +38,19 @@ namespace CRM_AGD.Data
     public DbSet<CRM_AGD.Areas.Equipment.Models.MachineType> MachineType { get; set; }
 
     public DbSet<CRM_AGD.Areas.Equipment.Models.MachineModel> MachineModel { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Client.Models.Issue> Issue { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Client.Models.IssueFromPortal> IssueFromPortal { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Mail.Models.Inbox> Inbox { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Mail.Models.Sendbox> Sendbox { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Settlements.Models.Facture> Facture { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Settlements.Models.FacturePosition> FacturePosition { get; set; }
+
+    public DbSet<CRM_AGD.Areas.Settlements.Models.VatRates> VatRates { get; set; }
   }
 }
