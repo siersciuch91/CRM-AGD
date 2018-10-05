@@ -16,14 +16,6 @@ namespace CRM_AGD.Controllers
       return View();
     }
 
-    public IActionResult CreateIssue()
-    {
-      ChangeSubMenu(Enum.Module.None);
-      ViewData["Message"] = "Create issue.";
-
-      return View();
-    }
-
     public IActionResult Contact()
     {
       ChangeSubMenu(Enum.Module.None);

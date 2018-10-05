@@ -30,7 +30,10 @@ namespace CRM_AGD.Areas.Address.Models
     {
       get
       {
-        return string.Format("{0} {1} - {2}",  streetPrefix.Prefix, Name, city.Name).Trim();
+        if (streetPrefix != null && city != null)
+          return string.Format("{0} {1} - {2}",  streetPrefix.Prefix, Name, city.Name).Trim();
+
+        return "";
       }
     }
 
@@ -38,7 +41,10 @@ namespace CRM_AGD.Areas.Address.Models
     {
       get
       {
-        return string.Format("{0} {1}", streetPrefix.Prefix, Name).Trim();
+        if (streetPrefix != null && city != null)
+          return string.Format("{0} {1}", streetPrefix.Prefix, Name).Trim();
+
+        return "";
       }
     }
   }
