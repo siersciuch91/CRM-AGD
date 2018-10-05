@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CRM_AGD.Areas.Address.Models;
-using NonFactors.Mvc.Lookup;
 using CRM_AGD.Data;
 
 namespace CRM_AGD.Areas.Address.Controllers
@@ -162,15 +161,6 @@ namespace CRM_AGD.Areas.Address.Controllers
     private bool StreetExists(int id)
     {
       return _context.Streets.Any(e => e.StreetId == id);
-    }
-
-    [HttpGet]
-    public JsonResult AllStreetPrefix(LookupFilter filter)
-    {
-      StreetPrefixLookup lookup = new StreetPrefixLookup(_context);
-      lookup.Filter = filter;
-
-      return Json(lookup.GetData());
     }
   }
 }

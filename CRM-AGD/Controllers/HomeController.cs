@@ -12,11 +12,13 @@ namespace CRM_AGD.Controllers
   {
     public IActionResult Index()
     {
+      ChangeSubMenu(Enum.Module.None);
       return View();
     }
 
     public IActionResult About()
     {
+      ChangeSubMenu(Enum.Module.None);
       ViewData["Message"] = "Your application description page.";
 
       return View();
@@ -24,6 +26,7 @@ namespace CRM_AGD.Controllers
 
     public IActionResult Contact()
     {
+      ChangeSubMenu(Enum.Module.None);
       ViewData["Message"] = "Your contact page.";
 
       return View();

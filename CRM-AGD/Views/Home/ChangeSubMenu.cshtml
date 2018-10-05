@@ -1,7 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "About";
+  ViewData["Title"] = "About";
 }
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
+@using CRM_AGD
 
-<p>Zmieniono zakladke</p>
+@{
+  var checkModule = StaticValues.CheckModule;
+}
+
+@switch (checkModule)
+{
+  case (CRM_AGD.Enum.Module.Address):
+    <li><a asp-area="Address" asp-controller="Cities" asp-action="Index">Cites</a></li>
+    <li><a asp-area="Address" asp-controller="Streets" asp-action="Index">Streets</a></li>
+    <li><a asp-area="Address" asp-controller="StreetPrefixes" asp-action="Index">Street Prefixes</a></li>
+    break;
+  case (CRM_AGD.Enum.Module.Equipment):
+    <li><a asp-area="Equipment" asp-controller="Manufacturers" asp-action="Index">Manufacturer</a></li>
+    <li><a asp-area="Equipment" asp-controller="MachineTypes" asp-action="Index">Machine Types</a></li>
+    <li><a asp-area="Equipment" asp-controller="MachineModels" asp-action="Index">Models</a></li>
+    break;
+  case (CRM_AGD.Enum.Module.Client):
+    <li><a asp-area="Client" asp-controller="Clients" asp-action="Index">Client</a></li>
+    break;
+}

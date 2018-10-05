@@ -1,5 +1,4 @@
-﻿@using NonFactors.Mvc.Grid;
-@model IEnumerable<CRM_AGD.Areas.Address.Models.City>
+﻿@model IEnumerable<CRM_AGD.Areas.Address.Models.City>
 
 @{
   ViewData["Title"] = "Index";
@@ -8,30 +7,9 @@
 
 <h2>Index</h2>
 
-
-
 <p>
   <a asp-action="Create">Create New</a>
 </p>
-
-
-@*<form asp-action="Index" method="get">
-  <p>
-    <b> Search Option: </b>
-    @Html.RadioButton("option", "Name") <text>Name</text>
-    @Html.RadioButton("option", "Id") <text> Id </text>
-    @Html.TextBox("search") <input type="submit" name="submit" value="Search" />
-    <input type="submit" name="submit" value="Search" />
-  </p>
-</form>*@
-
-@*@using (Html.BeginForm("Index", "City", FormMethod.Get))
-{
-  <b> Search Option: </b>
-  @Html.RadioButton("option", "Name") <text>Name</text>
-  @Html.RadioButton("option", "Id") <text> Id </text>
-  @Html.TextBox("search") <input type="submit" name="submit" value="Search" />
-}*@
 
 <table class="table">
   <thead>
@@ -58,24 +36,3 @@
     }
   </tbody>
 </table>
-
-@*@(Html
-                        .Grid(Model)
-                        .Build(columns =>
-                        {
-                          columns.Add(model => model.CityId).Titled("Id");
-                          columns.Add(model => model.Name).Titled("Name").Filterable(false);
-                          columns.Add(model => Html.ActionLink("Edit", "Edit", new { id = model.CityId }));
-                          columns.Add(model => Html.ActionLink("Details", "Details", new { id = model.CityId}));
-                          columns.Add(model => Html.ActionLink("Delete", "Delete", new { id = model.CityId})).Css("fixed-width");
-                        }).WithFilterMode(GridFilterMode.FilterRow).Empty("No data found").Sortable().MultiFilterable()
-                  .Pageable(pager =>
-                  {
-                    pager.PageSizes = new Dictionary<Int32, String> { { 0, "All" }, { 25, "25" }, { 50, "50" } };
-                    pager.ShowPageSizes = true;
-                    pager.PagesToDisplay = 5;
-                    pager.CurrentPage = 1;
-                    pager.RowsPerPage = 2;
-                  })
-
-  )*@

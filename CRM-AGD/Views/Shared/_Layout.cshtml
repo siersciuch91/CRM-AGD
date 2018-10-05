@@ -53,23 +53,9 @@
     </div>
   </nav>
   <div class="container body-content">
-    @Html.Partial("MvcLookup/_Dialog")
-
     @RenderBody()
 
     <script src="~/Scripts/JQuery/jquery-3.3.1.js"></script>
-    <script src="~/Scripts/MvcGrid/mvc-grid.js"></script>
-    <script>
-      $('.mvc-grid').mvcgrid();
-    </script>
-
-    <script src="~/Scripts/MvcLookup/mvc-lookup.js"></script>
-    <script>
-      [].forEach.call(document.getElementsByClassName('mvc-lookup'), function (element) {
-        new MvcLookup(element);
-      });
-    </script>
-
 
     <hr />
     <footer>

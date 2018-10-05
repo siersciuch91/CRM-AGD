@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CRM_AGD.Areas.Address.Models;
-using NonFactors.Mvc.Lookup;
 using CRM_AGD.Data;
 
 namespace CRM_AGD.Areas.Address.Controllers
@@ -147,16 +146,6 @@ namespace CRM_AGD.Areas.Address.Controllers
     private bool StreetPrefixExists(int id)
     {
       return _context.StreetPrefixes.Any(e => e.StreetPrefixId == id);
-    }
-
-
-    [HttpGet]
-    public JsonResult AllStreetPrefix(LookupFilter filter)
-    {
-      StreetPrefixLookup lookup = new StreetPrefixLookup(_context);
-      lookup.Filter = filter;
-
-      return Json(lookup.GetData());
     }
   }
 }
