@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CRM_AGD.Areas.Equipment.Models;
 using CRM_AGD.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CRM_AGD.Areas.Equipment.Controllers
 {
   [Area("Equipment")]
+  [Authorize]
   public class MachineModelsController : Controller
   {
     private readonly ApplicationDbContext _context;

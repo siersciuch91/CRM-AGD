@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CRM_AGD.Areas.Address.Models;
 using CRM_AGD.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CRM_AGD.Areas.Address.Controllers
 {
   [Area("Address")]
+  [Authorize]
   public class StreetPrefixesController : Controller
   {
     private readonly ApplicationDbContext _context;
