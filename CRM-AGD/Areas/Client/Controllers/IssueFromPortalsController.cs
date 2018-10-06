@@ -50,6 +50,7 @@ namespace CRM_AGD.Areas.Client.Controllers
     }
 
     // GET: Client/IssueFromPortals/Create
+    [AllowAnonymous]
     public IActionResult Create()
     {
       ViewData["MachineModelId"] = new SelectList(_context.MachineModel, "MachineModelId", "Model");
@@ -62,6 +63,7 @@ namespace CRM_AGD.Areas.Client.Controllers
     // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [AllowAnonymous]
     public async Task<IActionResult> Create([Bind("IssueFromPortalId,MachineModelId,FirstName,SecondName,EmailAddress,PhoneNumber,StreetId,HomeNumber,SuggestedDate,Description")] IssueFromPortal issueFromPortal)
     {
       if (ModelState.IsValid)

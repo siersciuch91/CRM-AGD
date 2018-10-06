@@ -5,6 +5,17 @@
     <UserSecretsId>aspnet-CRM_AGD-5A614028-F5F0-42B0-B727-6A80ADCFBC48</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Areas\Mail\Data\**" />
+    <Compile Remove="Areas\Settlements\Data\**" />
+    <Content Remove="Areas\Mail\Data\**" />
+    <Content Remove="Areas\Settlements\Data\**" />
+    <EmbeddedResource Remove="Areas\Mail\Data\**" />
+    <EmbeddedResource Remove="Areas\Settlements\Data\**" />
+    <None Remove="Areas\Mail\Data\**" />
+    <None Remove="Areas\Settlements\Data\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="angular-ui-grid" Version="4.6.1" />
@@ -43,11 +54,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Home.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Mail\Data\" />
-    <Folder Include="Areas\Settlements\Data\" />
   </ItemGroup>
 
 </Project>
