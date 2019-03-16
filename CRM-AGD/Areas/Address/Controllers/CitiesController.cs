@@ -10,7 +10,7 @@ namespace CRM_AGD.Areas.Address.Controllers
 {
   [Area("Address")]
   [Authorize]
-  public class CitiesController : Controller
+  public class CitiesController : Controller, ICitiesController
   {
     private readonly ApplicationDbContext _context;
 

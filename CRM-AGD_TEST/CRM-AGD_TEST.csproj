@@ -9,8 +9,20 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Client\" />
+    <Folder Include="Areas\Equipment\" />
+    <Folder Include="Areas\Mail\" />
+    <Folder Include="Areas\Settlements\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRM-AGD\CRM_AGD.csproj" />
   </ItemGroup>
 
 </Project>
