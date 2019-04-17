@@ -25,7 +25,7 @@ namespace CRM_AGD.Areas.Equipment.Controllers
     // GET: Equipment/MachineTypes
     public async Task<IActionResult> Index()
     {
-      return View(await _context.MachineType.ToListAsync());
+      return View(await _context.MachineType.OrderBy(mn => mn.Name).ToListAsync());
     }
 
     // GET: Equipment/MachineTypes/Details/5

@@ -73,8 +73,8 @@ namespace CRM_AGD.Areas.Equipment.Controllers
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
       }
-      ViewData["MachineTypeId"] = new SelectList(_context.MachineType, "MachineTypeId", "MachineTypeId", machineModel.MachineTypeId);
-      ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer, "ManufacturerId", "ManufacturerId", machineModel.ManufacturerId);
+      ViewData["MachineTypeId"] = new SelectList(_context.MachineType.OrderBy(m => m.Name), "MachineTypeId", "MachineTypeId", machineModel.MachineTypeId);
+      ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer.OrderBy(m => m.Name), "ManufacturerId", "ManufacturerId", machineModel.ManufacturerId);
       return View(machineModel);
     }
 
@@ -91,8 +91,8 @@ namespace CRM_AGD.Areas.Equipment.Controllers
       {
         return NotFound();
       }
-      ViewData["MachineTypeId"] = new SelectList(_context.MachineType, "MachineTypeId", "Name", machineModel.MachineTypeId);
-      ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer, "ManufacturerId", "Name", machineModel.ManufacturerId);
+      ViewData["MachineTypeId"] = new SelectList(_context.MachineType.OrderBy(m => m.Name), "MachineTypeId", "Name", machineModel.MachineTypeId);
+      ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer.OrderBy(m => m.Name), "ManufacturerId", "Name", machineModel.ManufacturerId);
       return View(machineModel);
     }
 
@@ -128,8 +128,8 @@ namespace CRM_AGD.Areas.Equipment.Controllers
         }
         return RedirectToAction(nameof(Index));
       }
-      ViewData["MachineTypeId"] = new SelectList(_context.MachineType, "MachineTypeId", "Name", machineModel.MachineTypeId);
-      ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer, "ManufacturerId", "Name", machineModel.ManufacturerId);
+      ViewData["MachineTypeId"] = new SelectList(_context.MachineType.OrderBy(m => m.Name), "MachineTypeId", "Name", machineModel.MachineTypeId);
+      ViewData["ManufacturerId"] = new SelectList(_context.Manufacturer.OrderBy(m => m.Name), "ManufacturerId", "Name", machineModel.ManufacturerId);
       return View(machineModel);
     }
 

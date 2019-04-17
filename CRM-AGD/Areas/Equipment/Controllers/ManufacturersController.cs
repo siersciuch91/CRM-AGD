@@ -22,7 +22,7 @@ namespace CRM_AGD.Areas.Equipment.Controllers
     // GET: Equipment/Manufacturers
     public async Task<IActionResult> Index()
     {
-      return View(await _context.Manufacturer.ToListAsync());
+      return View(await _context.Manufacturer.OrderBy(m => m.Name).ToListAsync());
     }
 
     // GET: Equipment/Manufacturers/Details/5
