@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CRM_AGD.Areas.Settlements.Controllers
 {
-  [Area("Settlements")]
+    [Area("Settlements")]
   [Authorize]
   public class FacturesController : Controller
   {

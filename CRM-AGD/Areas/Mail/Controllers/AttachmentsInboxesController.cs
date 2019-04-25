@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CRM_AGD.Areas.Mail.Models;
@@ -11,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CRM_AGD.Areas.Mail.Controllers
 {
-  [Produces("application/json")]
+    [Produces("application/json")]
   [Route("api/AttachmentsInboxes")]
   [Authorize]
   public class AttachmentsInboxesController : Controller

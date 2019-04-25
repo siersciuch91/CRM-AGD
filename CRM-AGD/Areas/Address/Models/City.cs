@@ -1,9 +1,8 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CRM_AGD.Areas.Address.Models
 {
-  public class City : ICity
+    public class City : ICity
   {
     public int CityId { get; set; }
 
